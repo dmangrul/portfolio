@@ -25,6 +25,9 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
 }
 
 body {
@@ -33,7 +36,11 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    min-height: 100vh;
 }
 
 
@@ -458,6 +465,8 @@ code, pre {
     position: relative;
     z-index: 5;
     background: transparent;
+    overflow: visible;
+    min-height: auto;
 }
 
 .section-alt {
@@ -1288,7 +1297,10 @@ code, pre {
 
 html, body {
     overflow-x: hidden;
+    overflow-y: auto;
     max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
 }
 
 

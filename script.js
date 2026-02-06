@@ -502,62 +502,80 @@ function initPaintEffect() {
     });
     
 
-    document.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-        const touch = e.touches[0];
-        mouseX = touch.clientX;
-        mouseY = touch.clientY;
-        
-        const dx = mouseX - lastMouseX;
-        const dy = mouseY - lastMouseY;
-        
-        if (Math.sqrt(dx * dx + dy * dy) > 2) {
-            blobs.push(new PaintBlob(
-                mouseX,
-                mouseY,
-                30 + Math.random() * 15,
-                dx * 0.5,
-                dy * 0.5
-            ));
+    let touchStartY = 0;
+    let isScrolling = false;
+    
+    document.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+            touchStartY = e.touches[0].clientY;
+            isScrolling = false;
         }
-        
-        lastMouseX = mouseX;
-        lastMouseY = mouseY;
-    }, { passive: false });
+    }, { passive: true });
+    
+    document.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            const currentY = touch.clientY;
+            const deltaY = Math.abs(currentY - touchStartY);
+            const deltaX = Math.abs(touch.clientX - (lastMouseX || touch.clientX));
+            
+            mouseX = touch.clientX;
+            mouseY = touch.clientY;
+            
+            const dx = mouseX - lastMouseX;
+            const dy = mouseY - lastMouseY;
+            
+            if (deltaY > 10 && deltaY > deltaX * 2) {
+                isScrolling = true;
+            }
+            
+            if (!isScrolling && Math.sqrt(dx * dx + dy * dy) > 2) {
+                blobs.push(new PaintBlob(
+                    mouseX,
+                    mouseY,
+                    30 + Math.random() * 15,
+                    dx * 0.5,
+                    dy * 0.5
+                ));
+            }
+            
+            lastMouseX = mouseX;
+            lastMouseY = mouseY;
+        }
+    }, { passive: true });
     
 
     document.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        const touch = e.changedTouches[0];
-        const clickX = touch.clientX;
-        const clickY = touch.clientY;
-        
-
-        const burstCount = 10 + Math.floor(Math.random() * 8);
-        
-        for (let i = 0; i < burstCount; i++) {
-            const angle = (Math.PI * 2 * i) / burstCount + Math.random() * 0.3;
-            const speed = 2 + Math.random() * 3;
-            const vx = Math.cos(angle) * speed;
-            const vy = Math.sin(angle) * speed;
-
-            const radius = 12 + Math.random() * 12;
+        if (!isScrolling && e.changedTouches.length === 1) {
+            const touch = e.changedTouches[0];
+            const clickX = touch.clientX;
+            const clickY = touch.clientY;
             
-
-            const burstBlob = new PaintBlob(
-                clickX,
-                clickY,
-                radius,
-                vx,
-                vy
-            );
-
-            burstBlob.isBurst = true;
-            burstBlob.burstOpacity = 0.6;
+            const burstCount = 10 + Math.floor(Math.random() * 8);
             
-            blobs.push(burstBlob);
+            for (let i = 0; i < burstCount; i++) {
+                const angle = (Math.PI * 2 * i) / burstCount + Math.random() * 0.3;
+                const speed = 2 + Math.random() * 3;
+                const vx = Math.cos(angle) * speed;
+                const vy = Math.sin(angle) * speed;
+                const radius = 12 + Math.random() * 12;
+                
+                const burstBlob = new PaintBlob(
+                    clickX,
+                    clickY,
+                    radius,
+                    vx,
+                    vy
+                );
+                
+                burstBlob.isBurst = true;
+                burstBlob.burstOpacity = 0.6;
+                
+                blobs.push(burstBlob);
+            }
         }
-    }, { passive: false });
+        isScrolling = false;
+    }, { passive: true });
     
 
     function animate() {
