@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep Mangrulkar | AI/ML Engineer & Software Developer</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Deep Mangrulkar - AI/ML Engineer & Software Engineer Portfolio">
+    <title>Deep Mangrulkar | AI/ML Engineer & Software Engineer</title>
+    <link rel="stylesheet" href="styles.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Canvas for Paint Effect -->
+    <canvas id="paintCanvas" class="paint-canvas"></canvas>
+    
+    <!-- Canvas for Tech Background Animations -->
+    <canvas id="techCanvas" class="tech-canvas"></canvas>
+    
     <!-- Animated Background Particles -->
     <div class="particles" id="particles"></div>
     
@@ -49,7 +57,7 @@
                     <span class="cursor">|</span>
                 </p>
                 <p class="hero-description">
-                    AI/ML Engineer & Software Developer passionate about building intelligent systems
+                    AI/ML Engineer & Software Engineer passionate about building intelligent systems
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -64,7 +72,7 @@
                         <span class="dot green"></span>
                     </div>
                     <div class="code-content">
-                        <pre><code><span class="code-keyword">class</span> <span class="code-class">Developer</span> {
+                        <pre><code><span class="code-keyword">class</span> <span class="code-class">Engineer</span> {
   <span class="code-keyword">constructor</span>() {
     <span class="code-property">this.name</span> = <span class="code-string">"Deep Mangrulkar"</span>;
     <span class="code-property">this.role</span> = <span class="code-string">"AI/ML Engineer"</span>;
@@ -95,13 +103,13 @@
                 <div class="about-text">
                     <div class="glass-card">
                         <p>
-                            <!-- ADD YOUR ABOUT ME CONTENT HERE -->
-                            I'm a Computer Science student with a concentration in Artificial Intelligence and Machine Learning. 
-                            Passionate about developing intelligent systems and solving complex problems through code.
+                            Hello! I'm Deep, a computer science student at Carnegie Mellon University with a concentration in Artificial Intelligence and Machine Learning. 
+                            Passionate about solving complex problems through code, specifically in the fields of LLMs, computer vision, and autonomous systems.
                         </p>
                         <p>
-                            <!-- ADD MORE ABOUT YOU HERE -->
-                            I enjoy working on projects that combine cutting-edge AI research with practical applications.
+                            I most recently worked as an AI/ML intern at Ladle, where I helped build a recipe personalization system using LLMs and computer vision. 
+                            I enjoy working on projects that combine cutting-edge AI research with practical applications, from computer vision and natural language processing to full-stack development.
+                            These projects and experiences have shaped my career path in AI, and I'm excited to continue building intelligent systems through programming.
                         </p>
                         <div class="about-highlights">
                             <div class="highlight-item">
@@ -139,26 +147,29 @@
                 Education
             </h2>
             <div class="timeline">
-                <!-- ADD YOUR EDUCATION ENTRIES HERE -->
                 <div class="timeline-item glass-card">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>Degree Name</h3>
-                        <p class="timeline-institution">University Name</p>
-                        <p class="timeline-date">Start Date - End Date (or Expected)</p>
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <p class="timeline-institution">Carnegie Mellon University</p>
+                        <p class="timeline-date">Expected Graduation May 2027</p>
                         <p class="timeline-description">
-                            <!-- ADD DETAILS: GPA, Relevant Coursework, Honors, etc. -->
-                            Relevant coursework, GPA, honors, or achievements here.
+                            Concentration in Artificial Intelligence and Machine Learning
                         </p>
                         <ul class="timeline-bullets">
-                            <!-- ADD BULLET POINTS -->
-                            <li>Relevant coursework or achievement</li>
-                            <li>Another achievement or detail</li>
+                            <li>Data Structures & Algorithms</li>
+                            <li>Functional Programming</li>
+                            <li>Theoretical Computer Science</li>
+                            <li>Computer Systems</li>
+                            <li>Human-Computer Interaction</li>
+                            <li>AI Sensing Systems</li>
+                            <li>Probability Theory</li>
+                            <li>Discrete Math</li>
+                            <li>Calculus</li>
+                            <li>Linear Algebra</li>
                         </ul>
                     </div>
                 </div>
-                
-                <!-- ADD MORE EDUCATION ENTRIES BY COPYING THE ABOVE timeline-item -->
             </div>
         </div>
     </section>
@@ -171,31 +182,45 @@
                 Professional Experience
             </h2>
             <div class="experience-grid">
-                <!-- ADD YOUR EXPERIENCE ENTRIES HERE -->
                 <div class="experience-card glass-card">
                     <div class="experience-header">
-                        <h3>Job Title</h3>
-                        <span class="experience-company">Company Name</span>
+                        <h3>Artificial Intelligence / Machine Learning Intern</h3>
+                        <span class="experience-company">Ladle</span>
                     </div>
-                    <p class="experience-date">Month Year - Month Year</p>
+                    <p class="experience-date">July 2025 - December 2025</p>
                     <p class="experience-description">
-                        <!-- ADD JOB DESCRIPTION -->
-                        Brief description of your role and responsibilities.
+                        Worked on an AI-powered recipe personalization system that adapt recipes to dietary preferences and available ingredients using cutting-edge LLMs like GPT-4 and Claude. Developed pipelines to identify ingredients from photos and created web scraping infrastructure that enriched thousands of multilingual recipes with semantic search capabilities.
                     </p>
-                    <ul class="experience-bullets">
-                        <!-- ADD BULLET POINTS FOR YOUR ACHIEVEMENTS -->
-                        <li>Achievement or responsibility</li>
-                        <li>Another achievement or responsibility</li>
-                        <li>Technologies used or impact made</li>
-                    </ul>
                     <div class="experience-tags">
-                        <!-- ADD TECHNOLOGIES USED -->
-                        <span class="tag">Technology 1</span>
-                        <span class="tag">Technology 2</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Firecrawl</span>
+                        <span class="tag">GPT-4</span>
+                        <span class="tag">Claude</span>
+                        <span class="tag">Weaviate</span>
+                        <span class="tag">Guardrails</span>
                     </div>
                 </div>
                 
-                <!-- ADD MORE EXPERIENCE CARDS BY COPYING THE ABOVE experience-card -->
+                <div class="experience-card glass-card">
+                    <div class="experience-header">
+                        <h3>Full-Stack Software Engineer Intern</h3>
+                        <span class="experience-company">Pacco LLC</span>
+                    </div>
+                    <p class="experience-date">June 2023 - August 2023</p>
+                    <p class="experience-description">
+                        Created a full-stack mobile application for delivery services using React Native, with backend integration handling 1000+ concurrent users through REST APIs. Optimized performance to cut load times in half, improving the overall user experience significantly.
+                    </p>
+                    <div class="experience-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">REST API</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -208,39 +233,102 @@
                 Projects & Developments
             </h2>
             <div class="projects-grid">
-                <!-- ADD YOUR PROJECTS HERE -->
                 <div class="project-card glass-card">
                     <div class="project-header">
-                        <div class="project-icon">🚀</div>
+                        <div class="project-icon">🎬</div>
                         <div class="project-links">
                             <a href="#" class="project-link" title="GitHub">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                             </a>
-                            <a href="#" class="project-link" title="Live Demo">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </div>
+                    </div>
+                    <h3>Bleep 'n Blur</h3>
+                    <p class="project-description">
+                        A computer vision system that automatically filters inappropriate content from movies using deep learning models and transcript analysis. Achieved high accuracy in scene recognition and precise synchronization with movie transcripts.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">RNN</span>
+                        <span class="tag">3DCNN</span>
+                        <span class="tag">Segmentation</span>
+                    </div>
+                </div>
+                
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <div class="project-icon">🔍</div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="GitHub">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                             </a>
                         </div>
                     </div>
-                    <h3>Project Name</h3>
+                    <h3>AIV Tracker</h3>
                     <p class="project-description">
-                        <!-- ADD PROJECT DESCRIPTION -->
-                        Brief description of what the project does and why it's interesting.
+                        A functional programming project that detects academic integrity violations by analyzing student submissions using recursive algorithms and parallel processing. Designed with logarithmic time complexity to efficiently handle large datasets on multicore systems.
                     </p>
                     <div class="project-tags">
-                        <!-- ADD TECHNOLOGIES USED -->
-                        <span class="tag">Python</span>
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag">React</span>
+                        <span class="tag">Standard ML</span>
+                        <span class="tag">Recursion</span>
+                        <span class="tag">Higher-Order Functions</span>
+                        <span class="tag">Functors</span>
                     </div>
                 </div>
                 
-                <!-- ADD MORE PROJECT CARDS BY COPYING THE ABOVE project-card -->
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <div class="project-icon">📦</div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="GitHub">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Huffman File Compression</h3>
+                    <p class="project-description">
+                        A file compression system implementing Huffman encoding to efficiently compress any file type. Achieved impressive compression ratios up to 90% by building custom bit-packing algorithms and frequency tables.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">C</span>
+                        <span class="tag">Trees</span>
+                        <span class="tag">Priority Queues</span>
+                        <span class="tag">Hash Tables</span>
+                        <span class="tag">Bit Packing</span>
+                    </div>
+                </div>
+                
+                <div class="project-card glass-card">
+                    <div class="project-header">
+                        <div class="project-icon">✍️</div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="GitHub">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Handwritten Digit Classification</h3>
+                    <p class="project-description">
+                        Built a convolutional neural network using TensorFlow to classify handwritten digits from the MNIST dataset. Achieved 99.2% accuracy with a minimal error rate, demonstrating strong performance in image recognition.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Keras</span>
+                        <span class="tag">CNN</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">Scikit-Learn</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -257,20 +345,42 @@
                 <div class="skills-category glass-card">
                     <h3>Programming Languages</h3>
                     <div class="skills-grid">
-                        <!-- ADD YOUR LANGUAGES HERE -->
                         <div class="skill-item">
                             <span class="skill-name">Python</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-progress="90"></div>
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">JavaScript</span>
                             <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Standard ML</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar">
                                 <div class="skill-progress" data-progress="85"></div>
                             </div>
                         </div>
-                        <!-- ADD MORE LANGUAGES -->
                     </div>
                 </div>
 
@@ -278,12 +388,16 @@
                 <div class="skills-category glass-card">
                     <h3>Frameworks & Libraries</h3>
                     <div class="skills-tags">
-                        <!-- ADD YOUR FRAMEWORKS HERE -->
                         <span class="tag">TensorFlow</span>
+                        <span class="tag">Keras</span>
                         <span class="tag">PyTorch</span>
+                        <span class="tag">Scikit-Learn</span>
                         <span class="tag">React</span>
+                        <span class="tag">React Native</span>
                         <span class="tag">Node.js</span>
-                        <!-- ADD MORE -->
+                        <span class="tag">Express</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">FastAPI</span>
                     </div>
                 </div>
 
@@ -291,12 +405,19 @@
                 <div class="skills-category glass-card">
                     <h3>Tools & Technologies</h3>
                     <div class="skills-tags">
-                        <!-- ADD YOUR TOOLS HERE -->
                         <span class="tag">Git</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">AWS</span>
-                        <span class="tag">Linux</span>
-                        <!-- ADD MORE -->
+                        <span class="tag">GitHub</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">Firecrawl</span>
+                        <span class="tag">Axios</span>
+                        <span class="tag">Selenium</span>
+                        <span class="tag">Weaviate</span>
+                        <span class="tag">Guardrails</span>
+                        <span class="tag">Linux/Unix</span>
+                        <span class="tag">Agile</span>
+                        <span class="tag">LaTeX</span>
                     </div>
                 </div>
             </div>
@@ -311,19 +432,25 @@
                 Extracurriculars & Leadership
             </h2>
             <div class="extracurriculars-grid">
-                <!-- ADD YOUR EXTRACURRICULARS HERE -->
                 <div class="extracurricular-card glass-card">
-                    <div class="extracurricular-icon">🏆</div>
-                    <h3>Activity/Organization Name</h3>
-                    <p class="extracurricular-role">Your Role</p>
-                    <p class="extracurricular-date">Date Range</p>
+                    <div class="extracurricular-icon">💻</div>
+                    <h3>ScottyLabs</h3>
+                    <p class="extracurricular-role">Software Engineer</p>
+                    <p class="extracurricular-date">September 2024 - Present</p>
                     <p class="extracurricular-description">
-                        <!-- ADD DESCRIPTION -->
-                        Description of your involvement and achievements.
+                        Building CMU life easier for students. Working with modern web technologies including React, Node.js, and MongoDB to create a seamless user experience.
                     </p>
                 </div>
                 
-                <!-- ADD MORE EXTRACURRICULAR CARDS -->
+                <div class="extracurricular-card glass-card">
+                    <div class="extracurricular-icon">🌍</div>
+                    <h3>United Nations Research Partnership</h3>
+                    <p class="extracurricular-role">SDG Researcher</p>
+                    <p class="extracurricular-date">November 2022 - June 2023</p>
+                    <p class="extracurricular-description">
+                        Contributed to UN Sustainable Development Goals research, focusing on sustainable cities, clean water, and global partnerships. Presented innovative solutions internationally in Germany, with work recognized by the Department of Education.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -348,19 +475,22 @@
                 <div class="contact-links">
                     <!-- UPDATE YOUR SOCIAL LINKS -->
                     <a href="https://github.com/dmangrul" target="_blank" class="social-link glass-card" title="GitHub">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path fill="#000000" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                     </a>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link glass-card" title="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    <a href="https://linkedin.com/in/deepmangrulkar" target="_blank" class="social-link glass-card" title="LinkedIn">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path fill="#000000" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                     </a>
                     <a href="mailto:deep.mangrulkar@gmail.com" class="social-link glass-card" title="Email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#000000" stroke-width="2" fill="none"></path>
+                            <polyline points="22,6 12,13 2,6" stroke="#000000" stroke-width="2" fill="none"></polyline>
                         </svg>
                     </a>
                 </div>
@@ -368,11 +498,45 @@
         </div>
     </section>
 
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">08.</span>
+                Send Me A Message
+            </h2>
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form glass-card">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>Designed & Built by Deep Mangrulkar</p>
-            <p class="footer-note">Built with modern web technologies</p>
+            <p>Designed & Programmed by Deep Mangrulkar</p>
+            <p class="footer-note">
+                Built with HTML5, CSS3, JavaScript, and <span style="white-space:nowrap;">JetBrains&nbsp;Mono</span> &amp; Inter fonts
+            </p>
         </div>
     </footer>
 
