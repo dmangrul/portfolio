@@ -1,6 +1,4 @@
-/* ============================================
-   RESET & BASE STYLES
-   ============================================ */
+/* Portfolio Created by Deep Mangrulkar */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +6,7 @@
 }
 
 :root {
-    /* Color Palette - Elegant Black & White Theme */
+    
     --primary: #000000;
     --primary-dark: #1a1a1a;
     --secondary: #2a2a2a;
@@ -38,7 +36,7 @@ body {
     position: relative;
 }
 
-/* Ensure all text content is fully visible */
+
 h1, h2, h3, h4, h5, h6,
 p, span, a, li, td, th,
 .hero-title, .hero-subtitle, .hero-description,
@@ -49,14 +47,12 @@ p, span, a, li, td, th,
     opacity: 1 !important;
 }
 
-/* Code Font */
+
 code, pre {
     font-family: 'JetBrains Mono', 'Courier New', monospace;
 }
 
-/* ============================================
-   CANVAS PAINT EFFECT
-   ============================================ */
+
 .paint-canvas {
     position: fixed;
     top: 0;
@@ -69,9 +65,7 @@ code, pre {
     mix-blend-mode: normal;
 }
 
-/* ============================================
-   TECH BACKGROUND CANVAS
-   ============================================ */
+
 .tech-canvas {
     position: fixed;
     top: 0;
@@ -83,9 +77,7 @@ code, pre {
     opacity: 0.12;
 }
 
-/* ============================================
-   ANIMATED PARTICLES BACKGROUND
-   ============================================ */
+
 .particles {
     position: fixed;
     top: 0;
@@ -126,9 +118,7 @@ code, pre {
     }
 }
 
-/* ============================================
-   NAVIGATION
-   ============================================ */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -219,9 +209,7 @@ code, pre {
     transition: all 0.3s ease;
 }
 
-/* ============================================
-   LIQUID GLASS EFFECT
-   ============================================ */
+
 .glass-card {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
@@ -257,12 +245,10 @@ code, pre {
     transform: translateY(-8px);
 }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
+
 .hero {
     min-height: 100vh;
-    min-height: 100dvh; /* Dynamic viewport height for mobile */
+    min-height: 100dvh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -388,7 +374,7 @@ code, pre {
     box-shadow: var(--shadow-glow);
 }
 
-/* Code Window */
+
 .code-window {
     background: rgba(250, 250, 250, 0.95);
     border-radius: 12px;
@@ -466,9 +452,7 @@ code, pre {
     100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
 }
 
-/* ============================================
-   SECTIONS
-   ============================================ */
+
 .section {
     padding: 6rem 2rem;
     position: relative;
@@ -503,9 +487,7 @@ code, pre {
     font-weight: 300;
 }
 
-/* ============================================
-   ABOUT SECTION
-   ============================================ */
+
 .about-content {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -587,9 +569,7 @@ code, pre {
     100% { transform: rotate(360deg); opacity: 0.2; }
 }
 
-/* ============================================
-   TIMELINE (Education/Experience)
-   ============================================ */
+
 .timeline {
     position: relative;
     padding-left: 2rem;
@@ -671,9 +651,7 @@ code, pre {
     font-weight: 600;
 }
 
-/* ============================================
-   EXPERIENCE GRID
-   ============================================ */
+
 .experience-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -738,9 +716,7 @@ code, pre {
     gap: 0.5rem;
 }
 
-/* ============================================
-   PROJECTS GRID
-   ============================================ */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -807,9 +783,7 @@ code, pre {
     gap: 0.5rem;
 }
 
-/* ============================================
-   TAGS
-   ============================================ */
+
 .tag {
     display: inline-block;
     padding: 0.4rem 0.9rem;
@@ -828,9 +802,7 @@ code, pre {
     transform: translateY(-2px);
 }
 
-/* ============================================
-   SKILLS SECTION
-   ============================================ */
+
 .skills-container {
     display: flex;
     flex-direction: column;
@@ -886,9 +858,7 @@ code, pre {
     gap: 0.75rem;
 }
 
-/* ============================================
-   EXTRACURRICULARS
-   ============================================ */
+
 .extracurriculars-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -929,9 +899,7 @@ code, pre {
     line-height: 1.8;
 }
 
-/* ============================================
-   CONTACT SECTION
-   ============================================ */
+
 .contact-content {
     display: flex;
     flex-direction: column;
@@ -1040,9 +1008,7 @@ code, pre {
     stroke: #000000 !important;
 }
 
-/* ============================================
-   CONTACT FORM
-   ============================================ */
+
 .contact-form-container {
     max-width: 600px;
     margin: 0 auto;
@@ -1118,9 +1084,7 @@ code, pre {
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
+
 .footer {
     padding: 3rem 2rem;
     text-align: center;
@@ -1136,9 +1100,7 @@ code, pre {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
+
 @media (max-width: 968px) {
     .hero-content {
         grid-template-columns: 1fr;
@@ -1319,27 +1281,25 @@ code, pre {
     
     .form-group input,
     .form-group textarea {
-        font-size: 16px; /* Prevents zoom on iOS */
+        font-size: 16px; 
     }
 }
 
-/* Prevent horizontal scroll on mobile */
+
 html, body {
     overflow-x: hidden;
     max-width: 100%;
 }
 
-/* Touch-friendly tap targets */
+
 @media (max-width: 768px) {
     .nav-link,
     .btn,
     .project-link,
     .social-link {
-        min-height: 44px; /* iOS recommended tap target size */
+        min-height: 44px; 
         min-width: 44px;
     }
 }
 
-/* ============================================
-   MOUSE TRACKER EFFECT (DISABLED)
-   ============================================ */
+

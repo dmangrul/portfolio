@@ -1,9 +1,7 @@
-// ============================================
-// PARTICLE SYSTEM
-// ============================================
+// Portfolio Created by Deep Mangrulkar
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
-    // Reduce particle count on mobile
+
     const isMobile = window.innerWidth <= 768;
     const particleCount = isMobile ? 40 : 80;
     
@@ -21,7 +19,7 @@ function createParticles() {
         particle.style.animationDelay = Math.random() * 25 + 's';
         particle.style.animationDuration = (Math.random() * 15 + 20) + 's';
         
-        // Make particles black with varying opacity
+
         particle.style.background = '#000000';
         particle.style.opacity = Math.random() * 0.1 + 0.05;
         
@@ -29,9 +27,9 @@ function createParticles() {
     }
 }
 
-// ============================================
-// MOUSE TRACKER EFFECT
-// ============================================
+
+
+
 function initMouseTracker() {
     const tracker = document.createElement('div');
     tracker.className = 'mouse-tracker';
@@ -65,16 +63,16 @@ function initMouseTracker() {
     
     animate();
     
-    // Hide tracker when mouse leaves window
+
     document.addEventListener('mouseleave', () => {
         isActive = false;
         tracker.classList.remove('active');
     });
 }
 
-// ============================================
-// INTERACTIVE GLOW EFFECTS ON MOUSE MOVE
-// ============================================
+
+
+
 function initInteractiveGlow() {
     const cards = document.querySelectorAll('.glass-card');
     
@@ -107,9 +105,9 @@ function initInteractiveGlow() {
     });
 }
 
-// ============================================
-// TYPEWRITER EFFECT
-// ============================================
+
+
+
 function initTypewriter() {
     const texts = [
         'AI/ML Engineer',
@@ -137,7 +135,7 @@ function initTypewriter() {
         let typeSpeed = isDeleting ? 50 : 100;
         
         if (!isDeleting && charIndex === currentText.length) {
-            typeSpeed = 2000; // Pause at end
+            typeSpeed = 2000;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
@@ -151,9 +149,9 @@ function initTypewriter() {
     type();
 }
 
-// ============================================
-// NAVBAR SCROLL EFFECT
-// ============================================
+
+
+
 function initNavbarScroll() {
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;
@@ -171,9 +169,9 @@ function initNavbarScroll() {
     });
 }
 
-// ============================================
-// SMOOTH SCROLL FOR NAVIGATION LINKS
-// ============================================
+
+
+
 function initSmoothScroll() {
     const navLinks = document.querySelectorAll('.nav-link');
     
@@ -191,7 +189,7 @@ function initSmoothScroll() {
                 });
             }
             
-            // Close mobile menu if open
+
             const navMenu = document.getElementById('nav-menu');
             const hamburger = document.getElementById('hamburger');
             navMenu.classList.remove('active');
@@ -200,9 +198,9 @@ function initSmoothScroll() {
     });
 }
 
-// ============================================
-// MOBILE MENU TOGGLE
-// ============================================
+
+
+
 function initMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
@@ -213,9 +211,9 @@ function initMobileMenu() {
     });
 }
 
-// ============================================
-// SKILL BARS ANIMATION
-// ============================================
+
+
+
 function initSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
     
@@ -239,9 +237,9 @@ function initSkillBars() {
     });
 }
 
-// ============================================
-// PARALLAX EFFECT FOR SECTIONS
-// ============================================
+
+
+
 function initParallax() {
     const sections = document.querySelectorAll('.section');
     
@@ -257,9 +255,9 @@ function initParallax() {
     });
 }
 
-// ============================================
-// FLOATING ANIMATION FOR CARDS
-// ============================================
+
+
+
 function initFloatingCards() {
     const cards = document.querySelectorAll('.glass-card');
     
@@ -269,7 +267,7 @@ function initFloatingCards() {
     });
 }
 
-// Add floating animation to CSS dynamically
+
 const style = document.createElement('style');
 style.textContent = `
     @keyframes floatCard {
@@ -285,9 +283,9 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// ============================================
-// ACTIVE NAVIGATION LINK HIGHLIGHTING
-// ============================================
+
+
+
 function initActiveNavLink() {
     const sections = document.querySelectorAll('.section, .hero');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -316,22 +314,22 @@ function initActiveNavLink() {
     updateActiveLink();
 }
 
-// ============================================
-// FLOWING PAINT EFFECT (Like toukoum.fr)
-// ============================================
+
+
+
 function initPaintEffect() {
     const canvas = document.getElementById('paintCanvas');
     if (!canvas) return;
     
     const ctx = canvas.getContext('2d');
     
-    // Set canvas size with debouncing for performance
+
     function resizeCanvas() {
         const width = window.innerWidth;
         const height = window.innerHeight;
         canvas.width = width;
         canvas.height = height;
-        // Clear canvas on resize
+
         ctx.clearRect(0, 0, width, height);
     }
     resizeCanvas();
@@ -341,12 +339,12 @@ function initPaintEffect() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             resizeCanvas();
-            // Clear blobs on resize to prevent artifacts
+
             blobs = [];
         }, 150);
     });
     
-    // Paint blob system - much faster than fluid simulation
+
     class PaintBlob {
         constructor(x, y, radius, vx, vy) {
             this.x = x;
@@ -356,27 +354,27 @@ function initPaintEffect() {
             this.vx = vx;
             this.vy = vy;
             this.life = 1.0;
-            this.decay = 0.01; // Increased for faster fade
-            this.spread = 0.3; // How much it spreads outward
+            this.decay = 0.01;
+            this.spread = 0.3;
         }
         
         update() {
-            // Move blob
+
             this.x += this.vx;
             this.y += this.vy;
             
-            // Slow down velocity
+
             this.vx *= 0.95;
             this.vy *= 0.95;
             
-            // Spread outward
+
             this.radius += this.spread;
             this.spread *= 0.98;
             
-            // Fade out
+
             this.life -= this.decay;
             
-            // Add some random movement for organic feel
+
             this.vx += (Math.random() - 0.5) * 0.1;
             this.vy += (Math.random() - 0.5) * 0.1;
         }
@@ -384,18 +382,18 @@ function initPaintEffect() {
         draw(ctx) {
             if (this.life <= 0) return false;
             
-            // Burst blobs are darker and more visible
+
             const baseOpacity = this.isBurst ? (this.burstOpacity || 0.6) : 0.25;
             const opacity = this.life * baseOpacity;
             const currentRadius = this.radius * (0.7 + this.life * 0.3);
             
-            // Create gradient for smooth edges
+
             const gradient = ctx.createRadialGradient(
                 this.x, this.y, 0,
                 this.x, this.y, currentRadius
             );
             
-            // Burst blobs have darker center
+
             const centerOpacity = this.isBurst ? opacity * 1.2 : opacity;
             gradient.addColorStop(0, `rgba(0, 0, 0, ${Math.min(1, centerOpacity)})`);
             gradient.addColorStop(0.4, `rgba(0, 0, 0, ${opacity * 0.7})`);
@@ -414,7 +412,7 @@ function initPaintEffect() {
     }
     
     let blobs = [];
-    // Reduce blob count on mobile for better performance
+
     const isMobile = window.innerWidth <= 768;
     const maxBlobs = isMobile ? 80 : 150;
     let mouseX = 0;
@@ -424,7 +422,7 @@ function initPaintEffect() {
     let isMouseDown = false;
     let frameCount = 0;
     
-    // Mouse interaction
+
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
@@ -433,7 +431,7 @@ function initPaintEffect() {
         const dy = mouseY - lastMouseY;
         const speed = Math.sqrt(dx * dx + dy * dy);
         
-        // Create blobs as mouse moves
+
         if (speed > 2) {
             const blobCount = isMouseDown ? 3 : 1;
             const radius = isMouseDown ? 40 + Math.random() * 20 : 25 + Math.random() * 15;
@@ -459,12 +457,12 @@ function initPaintEffect() {
         lastMouseY = mouseY;
     });
     
-    // Click burst effect
+
     document.addEventListener('click', (e) => {
         const clickX = e.clientX;
         const clickY = e.clientY;
         
-        // Create burst of paint blobs - more concentrated and darker
+
         const burstCount = 20 + Math.floor(Math.random() * 15);
         
         for (let i = 0; i < burstCount; i++) {
@@ -472,10 +470,10 @@ function initPaintEffect() {
             const speed = 3 + Math.random() * 5;
             const vx = Math.cos(angle) * speed;
             const vy = Math.sin(angle) * speed;
-            // Smaller initial radius for more concentrated burst
+
             const radius = 15 + Math.random() * 15;
             
-            // Create a special burst blob with darker appearance
+
             const burstBlob = new PaintBlob(
                 clickX,
                 clickY,
@@ -483,9 +481,9 @@ function initPaintEffect() {
                 vx,
                 vy
             );
-            // Make burst blobs darker and more visible
+
             burstBlob.isBurst = true;
-            burstBlob.burstOpacity = 0.6; // Higher opacity for burst
+            burstBlob.burstOpacity = 0.6;
             
             blobs.push(burstBlob);
         }
@@ -503,7 +501,7 @@ function initPaintEffect() {
         isMouseDown = false;
     });
     
-    // Touch support
+
     document.addEventListener('touchmove', (e) => {
         e.preventDefault();
         const touch = e.touches[0];
@@ -527,14 +525,14 @@ function initPaintEffect() {
         lastMouseY = mouseY;
     }, { passive: false });
     
-    // Touch burst effect for mobile
+
     document.addEventListener('touchend', (e) => {
         e.preventDefault();
         const touch = e.changedTouches[0];
         const clickX = touch.clientX;
         const clickY = touch.clientY;
         
-        // Create burst of paint blobs - optimized for mobile
+
         const burstCount = 10 + Math.floor(Math.random() * 8);
         
         for (let i = 0; i < burstCount; i++) {
@@ -542,10 +540,10 @@ function initPaintEffect() {
             const speed = 2 + Math.random() * 3;
             const vx = Math.cos(angle) * speed;
             const vy = Math.sin(angle) * speed;
-            // Smaller initial radius for more concentrated burst
+
             const radius = 12 + Math.random() * 12;
             
-            // Create a special burst blob with darker appearance
+
             const burstBlob = new PaintBlob(
                 clickX,
                 clickY,
@@ -553,27 +551,27 @@ function initPaintEffect() {
                 vx,
                 vy
             );
-            // Make burst blobs darker and more visible
+
             burstBlob.isBurst = true;
-            burstBlob.burstOpacity = 0.6; // Higher opacity for burst
+            burstBlob.burstOpacity = 0.6;
             
             blobs.push(burstBlob);
         }
     }, { passive: false });
     
-    // Animation loop
+
     function animate() {
-        // Gentle fade background
+
         ctx.fillStyle = 'rgba(255, 255, 255, 0.02)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
-        // Update and draw blobs
+
         blobs = blobs.filter(blob => {
             blob.update();
             return blob.draw(ctx);
         });
         
-        // Limit blob count for performance
+
         if (blobs.length > maxBlobs) {
             blobs = blobs.slice(-maxBlobs);
         }
@@ -585,9 +583,9 @@ function initPaintEffect() {
     animate();
 }
 
-// ============================================
-// CURSOR TRAIL EFFECT (OPTIONAL ENHANCEMENT)
-// ============================================
+
+
+
 function initCursorTrail() {
     const trail = [];
     const trailLength = 12;
@@ -636,9 +634,9 @@ function initCursorTrail() {
     animateTrail();
 }
 
-// ============================================
-// TECH BACKGROUND ANIMATIONS
-// ============================================
+
+
+
 function initTechBackground() {
     const canvas = document.getElementById('techCanvas');
     if (!canvas) {
@@ -649,7 +647,7 @@ function initTechBackground() {
     const ctx = canvas.getContext('2d');
     console.log('Tech background initialized');
     
-    // Matrix-style falling characters
+
     class MatrixColumn {
         constructor(x) {
             this.x = x;
@@ -677,7 +675,7 @@ function initTechBackground() {
                 this.initChars();
             }
             
-            // Update brightness (fade effect)
+
             this.chars.forEach((c, i) => {
                 c.brightness = Math.max(0, c.brightness - 0.02);
                 if (i === this.chars.length - 1) {
@@ -703,21 +701,21 @@ function initTechBackground() {
         }
     }
     
-    // Code snippet that appears and fades
+
     class CodeSnippet {
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
             this.life = 0;
-            this.maxLife = 300 + Math.random() * 200; // Longer life
+            this.maxLife = 300 + Math.random() * 200;
             this.code = this.generateCode();
             this.opacity = 0;
-            this.size = 0.9 + Math.random() * 0.3; // Vary size slightly
+            this.size = 0.9 + Math.random() * 0.3;
         }
         
         generateCode() {
             const snippets = [
-                // JavaScript
+
                 'function init() {',
                 'const data = await fetch();',
                 'class Component {',
@@ -729,7 +727,7 @@ function initTechBackground() {
                 'this.setState({});',
                 'useEffect(() => {}, []);',
                 'const [state, setState] = useState(initialState);',
-                // Python
+
                 'def train_model():',
                 'import tensorflow as tf',
                 'for i in range(10):',
@@ -738,19 +736,19 @@ function initTechBackground() {
                 'if __name__ == "__main__":',
                 '@dataclass',
                 'self.value = value',
-                // Java
+
                 'public class Main {',
                 'System.out.println("Hello, World!");',
                 'private int count;',
                 'for (int i = 0; i < 10; i++) {',
                 '@Override',
                 'List<String> names = new ArrayList<>();',
-                // SML
+
                 'fun factorial 0 = 1',
                 'val xs = [1,2,3,4]',
                 'val rec fib = fn 0 => 0 | 1 => 1 | n => fib(n-1)+fib(n-2)',
                 'datatype tree = Leaf of int | Node of tree * tree',
-                // C
+
                 '#include <stdio.h>',
                 'int main(void) {',
                 'printf("Hello, C!\\n");',
@@ -758,7 +756,7 @@ function initTechBackground() {
                 'return 0;',
                 '// pointer arithmetic',
                 'int *p = &x;',
-                // SQL
+
                 'SELECT * FROM users WHERE active = 1;',
                 'INSERT INTO logs (event, created_at) VALUES (?, NOW());',
                 'UPDATE products SET price = price * 1.1;',
@@ -796,7 +794,7 @@ function initTechBackground() {
         }
     }
     
-    // Binary stream effect
+
     class BinaryStream {
         constructor() {
             this.x = Math.random() * canvas.width;
@@ -840,23 +838,23 @@ function initTechBackground() {
         }
     }
     
-    // Initialize effects after class definitions
+
     const matrixColumns = [];
     let columnCount = Math.floor(canvas.width / 30);
     for (let i = 0; i < columnCount; i++) {
         matrixColumns.push(new MatrixColumn(i * 30 + 15));
     }
     
-    // Resize function that can access matrixColumns
+
     function resizeCanvas() {
         const width = window.innerWidth;
         const height = window.innerHeight;
         canvas.width = width;
         canvas.height = height;
-        // Clear canvas on resize
+
         ctx.clearRect(0, 0, width, height);
         
-        // Recalculate column count for matrix effect
+
         const newColumnCount = Math.floor(width / 30);
         if (newColumnCount !== columnCount) {
             matrixColumns.length = 0;
@@ -879,30 +877,30 @@ function initTechBackground() {
     const codeSnippets = [];
     const binaryStreams = [];
     
-    // Reduce initial effects on mobile
+
     const isMobile = window.innerWidth <= 768;
     const initialSnippets = isMobile ? 6 : 12;
     const maxSnippets = isMobile ? 15 : 25;
     const maxStreams = isMobile ? 8 : 15;
     
-    // Add initial code snippets
+
     for (let i = 0; i < initialSnippets; i++) {
         setTimeout(() => {
             codeSnippets.push(new CodeSnippet());
         }, i * 200);
     }
     
-    // Add initial binary streams
+
     for (let i = 0; i < (isMobile ? 3 : 5); i++) {
         setTimeout(() => {
             binaryStreams.push(new BinaryStream());
         }, i * 300);
     }
     
-    // Add code snippets periodically - more frequently and more at once
+
     setInterval(() => {
         if (codeSnippets.length < maxSnippets) {
-            // Add 2-3 snippets at a time (fewer on mobile)
+
             const count = isMobile ? 1 + Math.floor(Math.random() * 2) : 2 + Math.floor(Math.random() * 2);
             for (let i = 0; i < count; i++) {
                 setTimeout(() => {
@@ -912,26 +910,26 @@ function initTechBackground() {
         }
     }, isMobile ? 2500 : 1500);
     
-    // Add binary streams periodically
+
     setInterval(() => {
         if (binaryStreams.length < maxStreams) {
             binaryStreams.push(new BinaryStream());
         }
     }, isMobile ? 3000 : 2000);
     
-    // Animation loop
+
     function animate() {
-        // Clear with slight fade
+
         ctx.fillStyle = 'rgba(255, 255, 255, 0.03)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
-        // Update and draw matrix columns
+
         matrixColumns.forEach(column => {
             column.update();
             column.draw(ctx);
         });
         
-        // Update and draw code snippets
+
         codeSnippets.forEach((snippet, index) => {
             snippet.update();
             snippet.draw(ctx);
@@ -940,7 +938,7 @@ function initTechBackground() {
             }
         });
         
-        // Update and draw binary streams
+
         binaryStreams.forEach((stream, index) => {
             stream.update();
             stream.draw(ctx);
@@ -955,9 +953,9 @@ function initTechBackground() {
     animate();
 }
 
-// ============================================
-// INITIALIZE ALL FEATURES
-// ============================================
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     initTechBackground();
     initPaintEffect();
@@ -972,7 +970,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCursorTrail();
     initContactForm();
     
-    // Add fade-in animation on load
+
     document.body.style.opacity = '0';
     setTimeout(() => {
         document.body.style.transition = 'opacity 0.5s ease';
@@ -980,10 +978,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 });
 
-// ============================================
-// PERFORMANCE OPTIMIZATION
-// ============================================
-// Throttle scroll events
+
+
+
+
 function throttle(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -996,14 +994,14 @@ function throttle(func, wait) {
     };
 }
 
-// Apply throttling to scroll-heavy functions
+
 window.addEventListener('scroll', throttle(() => {
-    // Scroll-based animations can be added here
+
 }, 10));
 
-// ============================================
-// CONTACT FORM HANDLING
-// ============================================
+
+
+
 function initContactForm() {
     const form = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
@@ -1021,7 +1019,7 @@ function initContactForm() {
             message: formData.get('message')
         };
         
-        // Show loading state
+
         const submitButton = form.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         submitButton.textContent = 'sending...';
@@ -1029,33 +1027,33 @@ function initContactForm() {
         formMessage.style.display = 'none';
         
         try {
-            // Using Formspree or similar service
-            // You'll need to replace 'YOUR_FORM_ID' with your actual Formspree form ID
-            // Or use EmailJS, or your own backend endpoint
+
+
+
             
-            // Option 1: Using mailto (simple but requires email client)
+
             const mailtoLink = `mailto:deep.mangrulkar@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`)}`;
             window.location.href = mailtoLink;
             
-            // Option 2: Using Formspree (uncomment and add your form ID)
-            // const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(data)
-            // });
+
+
+
+
+
+
+
+
             
-            // if (response.ok) {
-            //     formMessage.textContent = 'message sent successfully! i\'ll get back to you soon.';
-            //     formMessage.className = 'form-message success';
-            //     formMessage.style.display = 'block';
-            //     form.reset();
-            // } else {
-            //     throw new Error('Failed to send message');
-            // }
+
+
+
+
+
+
+
+
             
-            // For mailto, show success message
+
             formMessage.textContent = 'opening your email client...';
             formMessage.className = 'form-message success';
             formMessage.style.display = 'block';
@@ -1072,7 +1070,7 @@ function initContactForm() {
     });
 }
 
-// Initialize contact form
+
 document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
 });
