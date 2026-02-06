@@ -502,34 +502,16 @@ function initPaintEffect() {
     });
     
 
-    let touchStartY = 0;
-    let isScrolling = false;
-    
-    document.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 1) {
-            touchStartY = e.touches[0].clientY;
-            isScrolling = false;
-        }
-    }, { passive: true });
-    
-    document.addEventListener('touchmove', (e) => {
-        if (e.touches.length === 1) {
+    if (!isMobile) {
+        document.addEventListener('touchmove', (e) => {
             const touch = e.touches[0];
-            const currentY = touch.clientY;
-            const deltaY = Math.abs(currentY - touchStartY);
-            const deltaX = Math.abs(touch.clientX - (lastMouseX || touch.clientX));
-            
             mouseX = touch.clientX;
             mouseY = touch.clientY;
             
             const dx = mouseX - lastMouseX;
             const dy = mouseY - lastMouseY;
             
-            if (deltaY > 10 && deltaY > deltaX * 2) {
-                isScrolling = true;
-            }
-            
-            if (!isScrolling && Math.sqrt(dx * dx + dy * dy) > 2) {
+            if (Math.sqrt(dx * dx + dy * dy) > 2) {
                 blobs.push(new PaintBlob(
                     mouseX,
                     mouseY,
@@ -541,12 +523,9 @@ function initPaintEffect() {
             
             lastMouseX = mouseX;
             lastMouseY = mouseY;
-        }
-    }, { passive: true });
-    
-
-    document.addEventListener('touchend', (e) => {
-        if (!isScrolling && e.changedTouches.length === 1) {
+        }, { passive: true });
+        
+        document.addEventListener('touchend', (e) => {
             const touch = e.changedTouches[0];
             const clickX = touch.clientX;
             const clickY = touch.clientY;
@@ -573,9 +552,8 @@ function initPaintEffect() {
                 
                 blobs.push(burstBlob);
             }
-        }
-        isScrolling = false;
-    }, { passive: true });
+        }, { passive: true });
+    }
     
 
     function animate() {
