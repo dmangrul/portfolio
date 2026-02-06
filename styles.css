@@ -455,6 +455,13 @@ code, pre {
     font-size: 1.5rem;
 }
 
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
 .image-wrapper {
     position: relative;
     width: 100%;
